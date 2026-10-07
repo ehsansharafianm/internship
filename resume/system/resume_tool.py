@@ -542,33 +542,22 @@ def render_command(args: argparse.Namespace) -> None:
 
 
 def render_masters_command(args: argparse.Namespace) -> None:
-    preview_root = PROJECT_ROOT / "system" / "master-previews"
-    for profile_name, profile in MASTER_PROFILES.items():
-        output_html = preview_root / f"{profile_name}.html"
-        output_pdf = (
-            None
-            if args.skip_pdf
-            else PROJECT_ROOT
-            / f"Ehsan-Sharafian-Resume-{profile_name.title()}.pdf"
-        )
-        render_resume(
-            profile["path"],
-            output_html,
-            output_pdf,
-            browser_path=args.browser,
-        )
-        print(f"Generated {profile['label']} HTML: {output_html}")
-        if output_pdf:
-            print(f"Generated {profile['label']} PDF:  {output_pdf}")
-
-    # Keep the original generic preview and PDF as compatibility aliases for
-    # the default Wearable Technology profile.
-    shutil.copy2(preview_root / "wearable-tech.html", SYSTEM_ROOT / "index.html")
-    if not args.skip_pdf:
-        shutil.copy2(
-            PROJECT_ROOT / "Ehsan-Sharafian-Resume-Wearable-Tech.pdf",
-            PROJECT_ROOT / "Ehsan-Sharafian-Resume.pdf",
-        )
+    # Render a single canonical master resume. The four focus profiles
+    # (wearable-tech, robotics, design, machine-learning) are not rendered
+    # here -- they exist only as starting points you choose per job in the
+    # New-Application wizard.
+    profile = MASTER_PROFILES[DEFAULT_MASTER_PROFILE]
+    output_html = SYSTEM_ROOT / "index.html"
+    output_pdf = None if args.skip_pdf else PROJECT_ROOT / "Ehsan-Sharafian-Resume.pdf"
+    render_resume(
+        profile["path"],
+        output_html,
+        output_pdf,
+        browser_path=args.browser,
+    )
+    print(f"Generated master HTML: {output_html}")
+    if output_pdf:
+        print(f"Generated master PDF:  {output_pdf}")
 
 
 def build_parser() -> argparse.ArgumentParser:
