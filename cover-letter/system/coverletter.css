@@ -1,0 +1,49 @@
+@page { size: 8.5in 11in; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #ffffff; }
+body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+a { color: inherit; text-decoration: none; }
+
+.page {
+  width: 8.5in; height: 11in; overflow: hidden; position: relative;
+  display: flex; flex-direction: column;
+  background: #ffffff; color: #27313a;
+  font-family: "Segoe UI", "Selawik", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Letterhead */
+.letterhead { position: relative; background: #edf4f7; padding: 34px 60px 22px; }
+.letterhead::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 6px; background: #075985; }
+.name { font-size: 40px; font-weight: 700; color: #075985; line-height: 1.05; letter-spacing: -0.01em; }
+.title { margin-top: 8px; display: flex; align-items: center; gap: 10px; font-size: 13px; color: #374151; }
+.title::before { content: ""; width: 32px; height: 2px; background: #075985; flex: 0 0 auto; }
+
+/* Contact bar */
+.contact-bar { background: #075985; color: #ffffff; padding: 12px 60px; display: grid; grid-template-columns: repeat(3, max-content); justify-content: start; column-gap: 40px; row-gap: 8px; font-size: 11.5px; }
+.contact-bar a { color: #ffffff; display: flex; align-items: center; gap: 6px; }
+.contact-bar .icon { width: 16px; height: 16px; border-radius: 50%; background: rgba(255,255,255,0.16); display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+.contact-bar svg { width: 10px; height: 10px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Letter */
+.letter { flex: 1; padding: 24px 60px 0; display: flex; flex-direction: column; font-size: 14.5px; line-height: 1.5; }
+.greeting { font-weight: 600; color: #075985; font-size: 15.5px; }
+.body { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; text-align: justify; text-wrap: pretty; }
+.body p { margin: 0; }
+.closing { margin-top: 18px; }
+.signature { margin-top: 6px; border-left: 3px solid #075985; padding-left: 12px; display: flex; flex-direction: column; gap: 0; }
+.signature-name { font-weight: 600; color: #0b0f14; font-size: 15px; }
+.signature-title { color: #075985; }
+
+/* Unfilled [placeholders] are highlighted so a draft is never submitted
+   with them still in it. Once replaced in the YAML, they disappear. */
+.placeholder { background: #fff3bf; color: #8a6d00; border-radius: 2px; padding: 0 2px; font-weight: 600; }
+
+/* Footer wave */
+.wave { display: block; flex: none; width: 100%; height: 70px; }
+
+/* On-screen preview only: show the sheet on a canvas with a drop shadow.
+   Printing/PDF is unaffected (stays edge-to-edge white). */
+@media screen {
+  body { background: #66717a; padding: 24px 0; }
+  .page { margin: 0 auto; box-shadow: 0 3px 18px rgb(0 0 0 / 35%); }
+}

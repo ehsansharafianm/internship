@@ -1,0 +1,71 @@
+application:
+  company: ""
+  role: ""
+  job_url: ""
+  created: ""
+  status: master
+
+cover_letter:
+  name: Ehsan Sharafian
+  title: "Ph.D. Candidate, Mechanical Engineering | University of Maine"
+
+  contact:
+    - kind: email
+      label: ehsan.sharafian@maine.edu
+      url: mailto:ehsan.sharafian@maine.edu
+    - kind: phone
+      label: (207) 631-6979
+      url: tel:+12076316979
+    - kind: website
+      label: ehsansharafian.com
+      url: https://ehsansharafian.com
+    - kind: linkedin
+      label: LinkedIn
+      url: https://linkedin.com/in/ehsan-sharafian-m
+    - kind: scholar
+      label: Google Scholar
+      url: https://scholar.google.com/citations?user=IF_W5kkAAAAJ&hl=en&oi=ao
+    - kind: github
+      label: GitHub
+      url: https://github.com/ehsansharafianm
+
+  greeting: "Dear Hiring Manager,"
+
+  # Each list item is one paragraph. Text in [square brackets] is a placeholder:
+  # it is highlighted in the draft so you never submit an unfilled letter.
+  # Replace every [ ... ] for the specific job, then re-render.
+  paragraphs:
+    - >-
+      I am writing to express my strong interest in the [Position title] internship position at
+      [Company name] for Summer 2027. I am a Ph.D. candidate in Mechanical Engineering at the University
+      of Maine. My research focuses on wearable sensing, machine learning, biomechanics, gait
+      rehabilitation, and digital health monitoring. I am particularly interested in [Company name]
+      because of its work in [specific technology/product/research area], which closely aligns with my
+      experience in [2-3 skills most relevant to the role].
+    - >-
+      During my Ph.D., I have engineered end-to-end wearable solutions, integrating custom mobile
+      applications, IMU sensors, machine learning models, and embedded hardware. I developed a
+      smartphone-deployed gait assessment system using a single IMU to reconstruct foot trajectories,
+      achieving 96% activity classification accuracy and 112 ms processing latency. In another project, I
+      contributed to a haptic feedback system that improved walking speed by up to 30%. These systems have
+      been evaluated with more than 85 participants. Together, these experiences strengthened my ability to
+      design for real users under real-world constraints while adapting system behavior and feedback to
+      individual users. I would bring that same combination of technical depth and hands-on validation
+      experience to [specific team or role at Company name].
+    - >-
+      Before beginning my Ph.D., I worked as a control system engineer at Sina Robotics, where I developed
+      PLC-based control logic for a telesurgical laparoscopic robotic platform and validated
+      inverse-kinematics algorithms in Simulink. I also built a Python-based user interface and
+      participated in hands-on system testing with laparoscopic surgeons. That experience gave me a sense
+      of the real challenges of developing high-stakes medical and surgical systems.
+    - >-
+      I believe my background in [relevant technical areas] would allow me to contribute effectively to
+      [specific team/project/product] while continuing to develop my expertise in [relevant area]. I would
+      be excited to bring my experience to [Company name].
+    - >-
+      Thank you for considering my application. I would welcome the opportunity to discuss how my
+      background and experience could contribute to your team.
+
+  closing: "Sincerely,"
+  signature: Ehsan Sharafian
+  signature_title: "Ph.D. Candidate, Mechanical Engineering | University of Maine"

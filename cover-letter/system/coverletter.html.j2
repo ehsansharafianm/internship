@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Ehsan's YAML cover-letter renderer">
+{% if application.company %}<meta name="application-company" content="{{ application.company }}">{% endif %}
+{% if application.role %}<meta name="application-role" content="{{ application.role }}">{% endif %}
+<title>{{ cover_letter.name }} - Cover Letter{% if application.company %} - {{ application.company }}{% endif %}</title>
+<style>
+{{ stylesheet | safe }}
+</style>
+</head>
+<body>
+{% macro contact_icon(kind) -%}
+  {% if kind == "email" %}
+    <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+  {% elif kind == "phone" %}
+    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  {% elif kind == "website" %}
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+  {% elif kind == "linkedin" %}
+    <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+  {% elif kind == "scholar" %}
+    <svg viewBox="0 0 24 24"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+  {% elif kind == "github" %}
+    <svg viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-5-2"/></svg>
+  {% else %}
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+  {% endif %}
+{%- endmacro %}
+
+<div class="page">
+
+  <header class="letterhead">
+    <div class="name">{{ cover_letter.name }}</div>
+    {% if cover_letter.title %}<div class="title">{{ cover_letter.title }}</div>{% endif %}
+  </header>
+
+  <nav class="contact-bar">
+    {% for item in cover_letter.contact %}
+    <a href="{{ item.url }}"><span class="icon">{{ contact_icon(item.kind) }}</span>{{ item.label }}</a>
+    {% endfor %}
+  </nav>
+
+  <main class="letter">
+    <div class="greeting">{{ cover_letter.greeting }}</div>
+    <div class="body">
+      {% for paragraph in cover_letter.paragraphs %}
+      <p>{{ paragraph | bodytext }}</p>
+      {% endfor %}
+    </div>
+    <div class="closing">{{ cover_letter.closing }}</div>
+    <div class="signature">
+      <div class="signature-name">{{ cover_letter.signature }}</div>
+      {% if cover_letter.signature_title %}<div class="signature-title">{{ cover_letter.signature_title }}</div>{% endif %}
+    </div>
+  </main>
+
+  <svg class="wave" viewBox="0 0 816 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 34 C 136 6, 272 6, 408 30 S 680 58, 816 24 L 816 70 L 0 70 Z" fill="#edf4f7"/>
+    <path d="M0 50 C 160 28, 300 30, 440 48 S 700 64, 816 44 L 816 70 L 0 70 Z" fill="#cfe0e8"/>
+    <path d="M0 62 C 180 50, 340 52, 480 60 S 720 68, 816 58 L 816 70 L 0 70 Z" fill="#075985"/>
+  </svg>
+
+</div>
+</body>
+</html>
