@@ -29,7 +29,25 @@ SYSTEM_ROOT = Path(__file__).resolve().parent
 PROJECT_ROOT = SYSTEM_ROOT.parent
 DEFAULT_TEMPLATE = SYSTEM_ROOT / "resume.html.j2"
 DEFAULT_STYLESHEET = SYSTEM_ROOT / "resume.css"
-DEFAULT_MASTER = PROJECT_ROOT / "master" / "Ehsan_Sharafian_Master.yaml"
+MASTER_PROFILES = {
+    "wearable-tech": {
+        "label": "Wearable Technology",
+        "path": PROJECT_ROOT / "master" / "Ehsan_Sharafian_Wearable_Tech.yaml",
+    },
+    "robotics": {
+        "label": "Robotics",
+        "path": PROJECT_ROOT / "master" / "Ehsan_Sharafian_Robotics.yaml",
+    },
+    "design": {
+        "label": "Design",
+        "path": PROJECT_ROOT / "master" / "Ehsan_Sharafian_Design.yaml",
+    },
+    "machine-learning": {
+        "label": "Machine Learning",
+        "path": PROJECT_ROOT / "master" / "Ehsan_Sharafian_Machine_Learning.yaml",
+    },
+}
+DEFAULT_MASTER_PROFILE = "wearable-tech"
 
 
 class ResumeError(RuntimeError):
@@ -267,6 +285,12 @@ def parse_date(value: str) -> date:
         raise ResumeError("Application date must use YYYY-MM-DD format.") from exc
 
 
+def master_path_for_args(args: argparse.Namespace) -> Path:
+    if args.master:
+        return Path(args.master).resolve()
+    return MASTER_PROFILES[args.master_profile]["path"].resolve()
+
+
 RENDER_CMD_CONTENT = (
     "@echo off\n"
     'python "%~dp0..\\..\\..\\system\\resume_tool.py" render '
@@ -317,10 +341,12 @@ def write_render_launchers(application_folder: Path) -> None:
 
 def create_application(args: argparse.Namespace) -> None:
     application_date = parse_date(args.application_date)
-    master_path = Path(args.master).resolve()
+    master_path = master_path_for_args(args)
     destination_root = Path(args.destination_root).resolve()
+    resume_type = args.master_profile if not args.master else "custom"
     folder_name = (
-        f"{application_date.isoformat()}-{slugify(args.company)}-{slugify(args.role)}"
+        f"{application_date.isoformat()}-{resume_type}-"
+        f"{slugify(args.company)}-{slugify(args.role)}"
     )
     application_folder = destination_root / str(application_date.year) / folder_name
 
@@ -336,6 +362,7 @@ def create_application(args: argparse.Namespace) -> None:
 
     data = load_yaml(application_yaml)
     data["application"] = {
+        "master_profile": resume_type,
         "company": args.company,
         "role": args.role,
         "job_url": args.job_url,
@@ -424,6 +451,20 @@ def wizard_command(args: argparse.Namespace) -> int:
     print("and renders the custom HTML resume and PDF.")
     print("")
 
+    print("Choose the master resume for this application:")
+    profile_names = list(MASTER_PROFILES)
+    for number, profile_name in enumerate(profile_names, start=1):
+        label = MASTER_PROFILES[profile_name]["label"]
+        default_marker = " (default)" if profile_name == DEFAULT_MASTER_PROFILE else ""
+        print(f"  {number}. {label}{default_marker}")
+    while True:
+        profile_choice = input("Master resume [1]: ").strip() or "1"
+        if profile_choice.isdigit() and 1 <= int(profile_choice) <= len(profile_names):
+            master_profile = profile_names[int(profile_choice) - 1]
+            break
+        print(f"Enter a number from 1 to {len(profile_names)}.")
+    print("")
+
     company = prompt_required("Company name: ")
     role = prompt_required("Role or position title: ")
     job_url = input("Job URL (optional): ").strip()
@@ -441,36 +482,28 @@ def wizard_command(args: argparse.Namespace) -> int:
         except ResumeError as exc:
             print(exc)
 
-    pdf_choice = input("Generate PDF now? [Y/n]: ").strip().lower()
-    skip_pdf = pdf_choice in {"n", "no"}
-
     print("")
     print("-" * 60)
+    print(f"Master:  {MASTER_PROFILES[master_profile]['label']}")
     print(f"Company: {company}")
     print(f"Role:    {role}")
     if job_url:
         print(f"URL:     {job_url}")
     print(f"Date:    {application_date}")
-    print(f"PDF:     {'No - HTML only' if skip_pdf else 'Yes'}")
+    print("PDF:     Yes (automatic)")
     print("-" * 60)
     print("")
-
-    confirmation = input("Create this application? [Y/n]: ").strip().lower()
-    if confirmation in {"n", "no"}:
-        print("")
-        print("Application creation cancelled.")
-        input("Press Enter to close this window...")
-        return 0
 
     create_args = argparse.Namespace(
         company=company,
         role=role,
         job_url=job_url,
         application_date=application_date,
-        master=str(DEFAULT_MASTER),
+        master=None,
+        master_profile=master_profile,
         destination_root=str(PROJECT_ROOT / "applications"),
         browser=args.browser,
-        skip_pdf=skip_pdf,
+        skip_pdf=False,
         pdf_fallback_open=args.pdf_fallback_open,
     )
 
@@ -508,6 +541,36 @@ def render_command(args: argparse.Namespace) -> None:
         open_in_browser(output_html)
 
 
+def render_masters_command(args: argparse.Namespace) -> None:
+    preview_root = PROJECT_ROOT / "system" / "master-previews"
+    for profile_name, profile in MASTER_PROFILES.items():
+        output_html = preview_root / f"{profile_name}.html"
+        output_pdf = (
+            None
+            if args.skip_pdf
+            else PROJECT_ROOT
+            / f"Ehsan-Sharafian-Resume-{profile_name.title()}.pdf"
+        )
+        render_resume(
+            profile["path"],
+            output_html,
+            output_pdf,
+            browser_path=args.browser,
+        )
+        print(f"Generated {profile['label']} HTML: {output_html}")
+        if output_pdf:
+            print(f"Generated {profile['label']} PDF:  {output_pdf}")
+
+    # Keep the original generic preview and PDF as compatibility aliases for
+    # the default Wearable Technology profile.
+    shutil.copy2(preview_root / "wearable-tech.html", SYSTEM_ROOT / "index.html")
+    if not args.skip_pdf:
+        shutil.copy2(
+            PROJECT_ROOT / "Ehsan-Sharafian-Resume-Wearable-Tech.pdf",
+            PROJECT_ROOT / "Ehsan-Sharafian-Resume.pdf",
+        )
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Render Ehsan Sharafian's YAML resume into HTML and PDF."
@@ -529,8 +592,15 @@ def build_parser() -> argparse.ArgumentParser:
     create.add_argument(
         "-Master",
         "--master",
-        default=str(DEFAULT_MASTER),
-        help="Master YAML source.",
+        default=None,
+        help="Custom master YAML source (overrides --master-profile).",
+    )
+    create.add_argument(
+        "-MasterProfile",
+        "--master-profile",
+        choices=MASTER_PROFILES,
+        default=DEFAULT_MASTER_PROFILE,
+        help="Master resume profile to use.",
     )
     create.add_argument(
         "-DestinationRoot",
@@ -571,6 +641,13 @@ def build_parser() -> argparse.ArgumentParser:
         help="Open the rendered HTML in the default browser after rendering.",
     )
     render.set_defaults(handler=render_command)
+
+    render_masters = subparsers.add_parser(
+        "render-masters", help="Render all master resume profiles."
+    )
+    render_masters.add_argument("-Browser", "--browser", default=None)
+    render_masters.add_argument("-SkipPdf", "--skip-pdf", action="store_true")
+    render_masters.set_defaults(handler=render_masters_command)
 
     return parser
 

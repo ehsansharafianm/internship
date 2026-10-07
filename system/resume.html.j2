@@ -31,6 +31,7 @@
   <main class="resume">
     <header class="resume-header">
       <h1>{{ resume.name }}</h1>
+      <p class="professional-title">{{ resume.professional_title }}</p>
       <div class="contact-grid">
         {% for item in resume.contact %}
           <a class="contact-item" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
@@ -69,15 +70,14 @@
       {% endfor %}
     </section>
 
-    <section>
+    <section class="research-section">
       <h2>Research &amp; Engineering Experience</h2>
       {% for item in resume.experience %}
         <article class="experience-entry">
           <div class="entry-heading">
-            <div><strong>{{ item.position }}</strong><span class="separator"> | </span><span class="organization">{{ item.organization }}</span></div>
+            <div><strong>{{ item.position }}</strong><span class="separator"> | </span><span class="organization">{{ item.organization }}{% if item.location %}, {{ item.location }}{% endif %}</span></div>
             <div class="date">{{ item.date }}</div>
           </div>
-          {% if item.location %}<div class="location">{{ item.location }}</div>{% endif %}
           <ul>
             {% for highlight in item.highlights %}
               <li>{{ highlight | richtext }}</li>
@@ -88,15 +88,14 @@
     </section>
 
     {% if resume.teaching is defined %}
-    <section>
-      <h2>Teaching &amp; Mentoring</h2>
+    <section class="academic-section">
+      <h2>Academic Experience</h2>
       {% for item in resume.teaching %}
         <article class="experience-entry">
           <div class="entry-heading">
-            <div><strong>{{ item.position }}</strong><span class="separator"> | </span><span class="organization">{{ item.organization }}</span></div>
+            <div><strong>{{ item.position }}</strong><span class="separator"> | </span><span class="organization">{{ item.organization }}{% if item.location %}, {{ item.location }}{% endif %}</span></div>
             <div class="date">{{ item.date }}</div>
           </div>
-          {% if item.location %}<div class="location">{{ item.location }}</div>{% endif %}
           <ul>
             {% for highlight in item.highlights %}
               <li>{{ highlight | richtext }}</li>
@@ -108,11 +107,14 @@
     {% endif %}
 
     <section>
-      <h2>Selected Honors</h2>
+      <h2>Honors and Awards</h2>
       {% for item in resume.honors %}
-        <div class="dated-row">
-          <span>{{ item.name }}</span>
-          <span class="date">{{ item.date }}</span>
+        <div class="honor-entry">
+          <div class="dated-row">
+            <span><strong>{{ item.name }}</strong></span>
+            <span class="date">{{ item.date }}</span>
+          </div>
+          {% if item.details %}<div class="supporting">{{ item.details | richtext }}</div>{% endif %}
         </div>
       {% endfor %}
     </section>
@@ -142,7 +144,6 @@
 
     <section class="publications-section">
       <h2>Publications</h2>
-      <p class="publication-summary">{{ resume.publications.summary | richtext }}</p>
       <ul>
         {% for item in resume.publications["items"] %}
           <li>{{ item.authors | richtext }}. &ldquo;{{ item.title }}.&rdquo; <em>{{ item.venue }}</em> ({{ item.year }}).</li>

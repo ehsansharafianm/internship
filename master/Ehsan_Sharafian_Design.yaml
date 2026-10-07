@@ -7,6 +7,7 @@ application:
 
 resume:
   name: Ehsan Sharafian
+  professional_title: Ph.D. Candidate, Department of Mechanical Engineering, University of Maine, U.S.
 
   contact:
     - kind: email
@@ -15,40 +16,42 @@ resume:
     - kind: phone
       label: (207) 631-6979
       url: tel:+12076316979
-    - kind: linkedin
-      label: LinkedIn
-      url: https://linkedin.com/in/ehsan-sharafian-m
-    - kind: github
-      label: GitHub
-      url: https://github.com/ehsansharafianm
     - kind: website
       label: ehsansharafian.com
       url: https://ehsansharafian.com
+    - kind: linkedin
+      label: LinkedIn
+      url: https://linkedin.com/in/ehsan-sharafian-m
     - kind: scholar
       label: Google Scholar
       url: https://scholar.google.com/citations?user=IF_W5kkAAAAJ&hl=en&oi=ao
+    - kind: github
+      label: GitHub
+      url: https://github.com/ehsansharafianm
 
   summary: >-
-    Mechanical Engineering PhD candidate seeking an internship in  wearable technology.
-     Experienced in developing integrated wearable systems for gait analysis and rehabilitation using IMU sensing, embedded hardware, smartphone applications, 
-     machine learning, and haptic feedback. Proficient in Python, MATLAB, Java, and PyTorch, with six peer-reviewed journal publications.
+    Mechanical Engineering Ph.D. candidate seeking a Summer 2027 internship in wearable technology.
+    Experienced in developing integrated wearable systems for gait analysis and rehabilitation using IMU sensing,
+    embedded hardware, smartphone applications, machine learning, and haptic feedback. Collaborative researcher and
+    graduate student leader with experience coordinating multidisciplinary projects and human-subject studies
+    involving 85+ participants.
 
   education:
     - degree: Ph.D. in Mechanical Engineering
       institution: University of Maine
-      location: Orono, ME
-      date: Expected Dec 2027
+      location: U.S.
+      date: Sep 2023 - Dec 2027
       details: "GPA: 4.00/4.00 | Dissertation: Smart Real-Time Gait Training System"
     - degree: M.S. in Mechanical Engineering
       institution: Amirkabir University of Technology (Tehran Polytechnic)
       location: ""
-      date: Feb 2020
+      date: Sep 2017 - Feb 2020
       details: "GPA: 3.65/4.00 | Thesis: Trajectory optimization of a robot arm in joint and Cartesian spaces"
     - degree: B.S. in Mechanical Engineering
       institution: University of Tehran
       location: ""
-      date: Jul 2017
-      details: ""
+      date: Sep 2012 - Jul 2017
+      details: "GPA: 3.43/4.00 | Thesis: Design and Optimization of an Ankle Exoskeleton"
 
   skills:
     - category: Programming & Data Analysis
@@ -67,51 +70,50 @@ resume:
   experience:
     - position: Graduate Research Assistant
       organization: Biorobotics and Biomechanics Lab, University of Maine
-      location: Orono, ME
+      location: U.S.
       date: Sep 2023 - Present
       highlights:
-        - Developed real-time wearable sensing systems and Android-based applications for gait analysis, activity recognition, and home-based rehabilitation.
-        - Designed a smartphone-deployed system using a foot-mounted IMU to reconstruct foot trajectories and classify level walking, stairs, and ramps, achieving **96% accuracy**, **<1.1 cm error**, and **112 ms latency**.
-        - Developed a lightweight human activity recognition system using two IMUs, and classifier, achieving **99% accuracy** for normal locomotion and **93% accuracy** for atypical stair-negotiation pattern in older adults.
-        - Architected a home-based haptic feedback gait-training system integrating IMUs, vibrotactile motors, custom Android applications, SparkFun modules, and PCB circuitry for adults aged 65+.
-        - Demonstrated up to **30% improvement** in walking speed using the haptic feedback  system, with minimal cognitive demand.
-        - Conducted human-subject validation studies with **85+ participants** across gait analysis.
-        - Implemented real-time algorithms in Java, Python, and MATLAB for signal processing, sensor fusion, biomechanical modeling, and machine learning in mobile health applications.
+        - Designed a smartphone-deployed system using a foot-mounted IMU to reconstruct foot trajectories and classify walking conditions in real time, achieving **96% classification accuracy**, **<1.1 cm trajectory error**, and **112 ms latency** for mobile gait analysis.
+        - Developed a lightweight dual-IMU activity-recognition classifier for monitoring mobility in older adults, achieving **99% accuracy** for normal locomotion and **93% accuracy** for atypical stair-negotiation patterns.
+        - Architected a home-based haptic gait-training system integrating IMUs, vibrotactile motors, custom Android applications, and PCB circuitry for adults aged 65+, improving walking speed by **up to 30%** with minimal cognitive demand.
+        - Conducted human-subject validation studies involving **85+ participants**, coordinating data collection and analysis to evaluate wearable and mobile systems for gait analysis and rehabilitation.
     - position: Mechanical and Control Systems Engineer
       organization: Sina Robotics and Medical Innovators Co.
       location: 
       date: Dec 2022 - Sep 2023
       highlights:
-        - Developed PLC-based control logic for a telesurgical laparoscopic robotic platform using Beckhoff TwinCAT, with Simulink validation of inverse kinematics.
-        - Built a Python graphical user interface on Raspberry Pi for surgeon-facing robot control, system guidance, warnings, and improved human-robot interaction during testing and demonstrations.
-        - Coordinated hands-on validation sessions with **6 experienced surgeons**, using training, troubleshooting, and usability feedback to refine surgeon-facing robotic system workflows.
+        - Developed PLC-based control logic in Beckhoff TwinCAT and validated inverse kinematics in Simulink for a telesurgical laparoscopic robotic platform, supporting precise and reliable manipulator control.
+        - Built a Python graphical user interface on a Raspberry Pi for surgeon-facing robot control during testing, providing real-time system guidance and warnings to improve human-robot interaction.
+        - Coordinated hands-on validation sessions with **6 experienced surgeons**, translating usability feedback and troubleshooting findings into refined surgeon-facing robotic workflows.
   teaching:
     - position: Teaching Assistant
       organization: University of Maine
-      location: Orono, ME
+      location: U.S.
       date: Sep 2023 - Dec 2023
       highlights:
-        - Served as teaching assistant for Manufacturing Design course, instruction, grading, and SolidWorks design projects.
+        - Instructed and graded SolidWorks projects for a Manufacturing Design course, reinforcing practical manufacturing concepts for undergraduate students.
     - position: Teaching Assistant
       organization: Amirkabir University of Technology
       location:
       date: Nov 2020 - Nov 2022
       highlights:
-        - Served as teaching assistant for **5 semesters** in Dynamics II and Dynamics of Machines.
-        - Mentored 6 undergraduate students across 5 research teams, supporting equipment use, and project execution.
-        - Designed and assembled robotics/mechatronics setups integrating hardware, CAD, and MATLAB for student projects.
+        - Supported instruction in Dynamics II and Dynamics of Machines across **5 semesters**, helping students build foundational knowledge of mechanical systems.
+        - Mentored **6 undergraduate students** across five research teams, guiding equipment use, technical problem-solving, and project execution.
+        - Designed and assembled robotics and mechatronics setups integrating hardware, CAD, and MATLAB, enabling hands-on experimentation for undergraduate projects.
 
     - position: Mathematics Lecturer
       organization: Allame Tabatabayi High School
       location:
-      date: 2013 - 2017
+      date: Sep 2012 - Dec 2017
       highlights:
-        - Taught high-school mathematics to **40+ students** across 5+ classes, focusing on analytical reasoning and problem-solving.
+        - Taught mathematics to **40+ students across five classes**, strengthening analytical reasoning and problem-solving skills foundational to STEM education.
   honors:
     - name: Flagship Fellowship Award, University of Maine
       date: Sep 2024 - Sep 2025
+      details: Awarded in recognition of outstanding academic performance and research achievement.
     - name: Graduate Student Government Award for conference proposal
       date: Mar 2025
+      details: Awarded in the **top 10%** of 100 applicants for a conference proposal on a human activity recognition system for the American Society of Biomechanics (ASB) 2025 Conference.
 
   leadership:
     - position: Graduate Student Senator
@@ -125,11 +127,10 @@ resume:
       location: Orono, ME
       date: Sep 2024 - Apr 2026
       highlights:
-        - Organized Persian cultural events, including Nowruz celebrations with **100+ attendees**, to introduce Persian traditions.
-        - Coordinated event planning, team collaboration, logistics, and time-sensitive preparation for cultural and community programs.
+        - Organized Persian cultural events, including Nowruz celebrations with **100+ attendees**, to introduce and promote Persian traditions within the university community.
+        - Directed event logistics and team collaboration, coordinating preparations for cultural and community programs.
 
   publications:
-    summary: "**6 peer-reviewed (5 first-author) journal articles** in wearable sensing, biomechanics, rehabilitation engineering, and robotics."
     items:
       - authors: "**Ehsan Sharafian**, Babak Hejrati"
         title: Real-Time Foot Height Estimation and Activity Classification Using a Foot-Mounted IMU Implemented on a Smartphone

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Rebuild the master resume on macOS.
+# Rebuild all master resumes on macOS.
 # Double-click in Finder (macOS) or run from a terminal.
 # This is the macOS equivalent of Render-Master.cmd.
 
@@ -17,17 +17,11 @@ else
 fi
 
 "$PY" "$DIR/system/resume_tool.py" migrate --quiet
-if "$PY" "$DIR/system/resume_tool.py" render \
-  -Input "$DIR/master/Ehsan_Sharafian_Master.yaml" \
-  -OutputHtml "$DIR/system/index.html" \
-  -OutputPdf "$DIR/Ehsan-Sharafian-Resume.pdf" "$@"; then
+if "$PY" "$DIR/system/resume_tool.py" render-masters "$@"; then
   exit 0
 fi
 
-echo "Automatic PDF generation failed; opening the HTML print preview instead."
-"$PY" "$DIR/system/resume_tool.py" render \
-  -Input "$DIR/master/Ehsan_Sharafian_Master.yaml" \
-  -OutputHtml "$DIR/system/index.html" \
-  -SkipPdf -Open "$@"
+echo "Automatic PDF generation failed; generating HTML previews instead."
+"$PY" "$DIR/system/resume_tool.py" render-masters -SkipPdf "$@"
 
 exit $?

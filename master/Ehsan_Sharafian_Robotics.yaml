@@ -1,0 +1,158 @@
+application:
+  company: ""
+  role: ""
+  job_url: ""
+  created: ""
+  status: master
+
+resume:
+  name: Ehsan Sharafian
+  professional_title: Ph.D. Candidate, Department of Mechanical Engineering, University of Maine, U.S.
+
+  contact:
+    - kind: email
+      label: ehsan.sharafian@maine.edu
+      url: mailto:ehsan.sharafian@maine.edu
+    - kind: phone
+      label: (207) 631-6979
+      url: tel:+12076316979
+    - kind: website
+      label: ehsansharafian.com
+      url: https://ehsansharafian.com
+    - kind: linkedin
+      label: LinkedIn
+      url: https://linkedin.com/in/ehsan-sharafian-m
+    - kind: scholar
+      label: Google Scholar
+      url: https://scholar.google.com/citations?user=IF_W5kkAAAAJ&hl=en&oi=ao
+    - kind: github
+      label: GitHub
+      url: https://github.com/ehsansharafianm
+
+  summary: >-
+    Mechanical Engineering Ph.D. candidate seeking a Summer 2027 internship in wearable technology.
+    Experienced in developing integrated wearable systems for gait analysis and rehabilitation using IMU sensing,
+    embedded hardware, smartphone applications, machine learning, and haptic feedback. Collaborative researcher and
+    graduate student leader with experience coordinating multidisciplinary projects and human-subject studies
+    involving 85+ participants.
+
+  education:
+    - degree: Ph.D. in Mechanical Engineering
+      institution: University of Maine
+      location: U.S.
+      date: Sep 2023 - Dec 2027
+      details: "GPA: 4.00/4.00 | Dissertation: Smart Real-Time Gait Training System"
+    - degree: M.S. in Mechanical Engineering
+      institution: Amirkabir University of Technology (Tehran Polytechnic)
+      location: ""
+      date: Sep 2017 - Feb 2020
+      details: "GPA: 3.65/4.00 | Thesis: Trajectory optimization of a robot arm in joint and Cartesian spaces"
+    - degree: B.S. in Mechanical Engineering
+      institution: University of Tehran
+      location: ""
+      date: Sep 2012 - Jul 2017
+      details: "GPA: 3.43/4.00 | Thesis: Design and Optimization of an Ankle Exoskeleton"
+
+  skills:
+    - category: Programming & Data Analysis
+      details: Python, Java, C/C++, NumPy, Scikit-learn, PyTorch, SPSS
+    - category: Mobile & Software
+      details: MATLAB, Simulink, TwinCAT, Android Studio, Unity, Git
+    - category: Wearable & Embedded Systems
+      details: IMU sensors, Arduino IDE, SparkFun modules, Sensor fusion, PCB modules
+    - category: Biomechanics & Signal Processing
+      details: Gait analysis, Human activity recognition, Feature extraction, OpenSim
+    - category: Robotics
+      details: Surgical robotics, Parallel manipulators, Inverse kinematics, Dynamics, Control systems
+    - category: CAD
+      details: SolidWorks
+
+  experience:
+    - position: Graduate Research Assistant
+      organization: Biorobotics and Biomechanics Lab, University of Maine
+      location: U.S.
+      date: Sep 2023 - Present
+      highlights:
+        - Designed a smartphone-deployed system using a foot-mounted IMU to reconstruct foot trajectories and classify walking conditions in real time, achieving **96% classification accuracy**, **<1.1 cm trajectory error**, and **112 ms latency** for mobile gait analysis.
+        - Developed a lightweight dual-IMU activity-recognition classifier for monitoring mobility in older adults, achieving **99% accuracy** for normal locomotion and **93% accuracy** for atypical stair-negotiation patterns.
+        - Architected a home-based haptic gait-training system integrating IMUs, vibrotactile motors, custom Android applications, and PCB circuitry for adults aged 65+, improving walking speed by **up to 30%** with minimal cognitive demand.
+        - Conducted human-subject validation studies involving **85+ participants**, coordinating data collection and analysis to evaluate wearable and mobile systems for gait analysis and rehabilitation.
+    - position: Mechanical and Control Systems Engineer
+      organization: Sina Robotics and Medical Innovators Co.
+      location: 
+      date: Dec 2022 - Sep 2023
+      highlights:
+        - Developed PLC-based control logic in Beckhoff TwinCAT and validated inverse kinematics in Simulink for a telesurgical laparoscopic robotic platform, supporting precise and reliable manipulator control.
+        - Built a Python graphical user interface on a Raspberry Pi for surgeon-facing robot control during testing, providing real-time system guidance and warnings to improve human-robot interaction.
+        - Coordinated hands-on validation sessions with **6 experienced surgeons**, translating usability feedback and troubleshooting findings into refined surgeon-facing robotic workflows.
+  teaching:
+    - position: Teaching Assistant
+      organization: University of Maine
+      location: U.S.
+      date: Sep 2023 - Dec 2023
+      highlights:
+        - Instructed and graded SolidWorks projects for a Manufacturing Design course, reinforcing practical manufacturing concepts for undergraduate students.
+    - position: Teaching Assistant
+      organization: Amirkabir University of Technology
+      location:
+      date: Nov 2020 - Nov 2022
+      highlights:
+        - Supported instruction in Dynamics II and Dynamics of Machines across **5 semesters**, helping students build foundational knowledge of mechanical systems.
+        - Mentored **6 undergraduate students** across five research teams, guiding equipment use, technical problem-solving, and project execution.
+        - Designed and assembled robotics and mechatronics setups integrating hardware, CAD, and MATLAB, enabling hands-on experimentation for undergraduate projects.
+
+    - position: Mathematics Lecturer
+      organization: Allame Tabatabayi High School
+      location:
+      date: Sep 2012 - Dec 2017
+      highlights:
+        - Taught mathematics to **40+ students across five classes**, strengthening analytical reasoning and problem-solving skills foundational to STEM education.
+  honors:
+    - name: Flagship Fellowship Award, University of Maine
+      date: Sep 2024 - Sep 2025
+      details: Awarded in recognition of outstanding academic performance and research achievement.
+    - name: Graduate Student Government Award for conference proposal
+      date: Mar 2025
+      details: Awarded in the **top 10%** of 100 applicants for a conference proposal on a human activity recognition system for the American Society of Biomechanics (ASB) 2025 Conference.
+
+  leadership:
+    - position: Graduate Student Senator
+      organization: Department of Mechanical Engineering, University of Maine
+      location: Orono, ME
+      date: Sep 2025 - Present
+      highlights:
+        - Advocate for graduate student concerns in senate meetings, strengthening communication between students, faculty, and university leadership.
+    - position: President
+      organization: Persian Graduate Student Association, University of Maine
+      location: Orono, ME
+      date: Sep 2024 - Apr 2026
+      highlights:
+        - Organized Persian cultural events, including Nowruz celebrations with **100+ attendees**, to introduce and promote Persian traditions within the university community.
+        - Directed event logistics and team collaboration, coordinating preparations for cultural and community programs.
+
+  publications:
+    items:
+      - authors: "**Ehsan Sharafian**, Babak Hejrati"
+        title: Real-Time Foot Height Estimation and Activity Classification Using a Foot-Mounted IMU Implemented on a Smartphone
+        venue: Sensors
+        year: "2026"
+      - authors: "**Ehsan Sharafian**, Colby Ellis, Babak Hejrati"
+        title: "Real-Time Activity Recognition Using Minimal Biomechanical Features: A Lightweight IMU-Based Classifier for Older Adults"
+        venue: IEEE Access
+        year: "2025"
+      - authors: "**Ehsan Sharafian**, Colby Ellis, Ben Sidaway, Marie Hayes, Babak Hejrati"
+        title: The Effects of Real-Time Haptic Feedback on Gait and Cognitive Load in Older Adults
+        venue: IEEE Transactions on Neural Systems and Rehabilitation Engineering
+        year: "2025"
+      - authors: "Mohsen Noghani, **Ehsan Sharafian**, Ben Sidaway, Babak Hejrati"
+        title: Increasing Thigh Extension with Haptic Feedback Affects Leg Coordination in Young and Older Adult Walkers
+        venue: Journal of Biomechanics
+        year: "2025"
+      - authors: "**Ehsan Sharafian**, Maryam Ghassabzadeh, Afshin Taghvaeipour"
+        title: Trajectory Optimization of a Spot-Welding Robot in the Joint and Cartesian Spaces
+        venue: International Journal of Robotics and Automation
+        year: "2023"
+      - authors: "**Ehsan Sharafian**, Afshin Taghvaeipour, Maryam Ghassabzadeh"
+        title: Revisiting Screw Theory-Based Approaches in the Constraint Wrench Analysis of Robotic Systems
+        venue: Robotica
+        year: "2022"
