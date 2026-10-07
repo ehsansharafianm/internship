@@ -1,0 +1,171 @@
+application:
+  master_profile: design
+  company: A
+  role: B
+  job_url: C
+  created: '2026-09-05'
+  status: Preparing
+resume:
+  name: Ehsan Sharafian
+  contact:
+    - kind: email
+      label: ehsan.sharafian@maine.edu
+      url: mailto:ehsan.sharafian@maine.edu
+    - kind: phone
+      label: (207) 631-6979
+      url: tel:+12076316979
+    - kind: linkedin
+      label: LinkedIn
+      url: https://linkedin.com/in/ehsan-sharafian-m
+    - kind: github
+      label: GitHub
+      url: https://github.com/ehsansharafianm
+    - kind: website
+      label: ehsansharafian.com
+      url: https://ehsansharafian.com
+    - kind: scholar
+      label: Google Scholar
+      url: https://scholar.google.com/citations?user=IF_W5kkAAAAJ&hl=en&oi=ao
+  summary: "Mechanical Engineering PhD candidate seeking an internship in  wearable technology.\n Experienced in
+    developing integrated wearable systems for gait analysis and rehabilitation using IMU sensing, embedded hardware,
+    smartphone applications, \n machine learning, and haptic feedback. Proficient in Python, MATLAB, Java, and PyTorch,
+    with six peer-reviewed journal publications."
+  education:
+    - degree: Ph.D. in Mechanical Engineering
+      institution: University of Maine
+      location: Orono, ME
+      date: Expected Dec 2027
+      details: 'GPA: 4.00/4.00 | Dissertation: Smart Real-Time Gait Training System'
+    - degree: M.S. in Mechanical Engineering
+      institution: Amirkabir University of Technology (Tehran Polytechnic)
+      location: ''
+      date: Feb 2020
+      details: 'GPA: 3.65/4.00 | Thesis: Trajectory optimization of a robot arm in joint and Cartesian spaces'
+    - degree: B.S. in Mechanical Engineering
+      institution: University of Tehran
+      location: ''
+      date: Jul 2017
+      details: ''
+  skills:
+    - category: Programming & Data Analysis
+      details: Python, Java, C/C++, NumPy, Scikit-learn, PyTorch, SPSS
+    - category: Mobile & Software
+      details: MATLAB, Simulink, TwinCAT, Android Studio, Unity, Git
+    - category: Wearable & Embedded Systems
+      details: IMU sensors, Arduino IDE, SparkFun modules, Sensor fusion, PCB modules
+    - category: Biomechanics & Signal Processing
+      details: Gait analysis, Human activity recognition, Feature extraction, OpenSim
+    - category: Robotics
+      details: Surgical robotics, Parallel manipulators, Inverse kinematics, Dynamics, Control systems
+    - category: CAD
+      details: SolidWorks
+  experience:
+    - position: Graduate Research Assistant
+      organization: Biorobotics and Biomechanics Lab, University of Maine
+      location: Orono, ME
+      date: Sep 2023 - Present
+      highlights:
+        - Developed real-time wearable sensing systems and Android-based applications for gait analysis, 
+          activity recognition, and home-based rehabilitation.
+        - Designed a smartphone-deployed system using a foot-mounted IMU to reconstruct foot trajectories and 
+          classify level walking, stairs, and ramps, achieving **96% accuracy**, **<1.1 cm error**, and **112 
+          ms latency**.
+        - Developed a lightweight human activity recognition system using two IMUs, and classifier, achieving 
+          **99% accuracy** for normal locomotion and **93% accuracy** for atypical stair-negotiation pattern 
+          in older adults.
+        - Architected a home-based haptic feedback gait-training system integrating IMUs, vibrotactile motors,
+          custom Android applications, SparkFun modules, and PCB circuitry for adults aged 65+.
+        - Demonstrated up to **30% improvement** in walking speed using the haptic feedback  system, with 
+          minimal cognitive demand.
+        - Conducted human-subject validation studies with **85+ participants** across gait analysis.
+        - Implemented real-time algorithms in Java, Python, and MATLAB for signal processing, sensor fusion, 
+          biomechanical modeling, and machine learning in mobile health applications.
+    - position: Mechanical and Control Systems Engineer
+      organization: Sina Robotics and Medical Innovators Co.
+      location:
+      date: Dec 2022 - Sep 2023
+      highlights:
+        - Developed PLC-based control logic for a telesurgical laparoscopic robotic platform using Beckhoff 
+          TwinCAT, with Simulink validation of inverse kinematics.
+        - Built a Python graphical user interface on Raspberry Pi for surgeon-facing robot control, system 
+          guidance, warnings, and improved human-robot interaction during testing and demonstrations.
+        - Coordinated hands-on validation sessions with **6 experienced surgeons**, using training, 
+          troubleshooting, and usability feedback to refine surgeon-facing robotic system workflows.
+  teaching:
+    - position: Teaching Assistant
+      organization: University of Maine
+      location: Orono, ME
+      date: Sep 2023 - Dec 2023
+      highlights:
+        - Served as teaching assistant for Manufacturing Design course, instruction, grading, and SolidWorks 
+          design projects.
+    - position: Teaching Assistant
+      organization: Amirkabir University of Technology
+      location:
+      date: Nov 2020 - Nov 2022
+      highlights:
+        - Served as teaching assistant for **5 semesters** in Dynamics II and Dynamics of Machines.
+        - Mentored 6 undergraduate students across 5 research teams, supporting equipment use, and project 
+          execution.
+        - Designed and assembled robotics/mechatronics setups integrating hardware, CAD, and MATLAB for 
+          student projects.
+    - position: Mathematics Lecturer
+      organization: Allame Tabatabayi High School
+      location:
+      date: 2013 - 2017
+      highlights:
+        - Taught high-school mathematics to **40+ students** across 5+ classes, focusing on analytical 
+          reasoning and problem-solving.
+  honors:
+    - name: Flagship Fellowship Award, University of Maine
+      date: Sep 2024 - Sep 2025
+    - name: Graduate Student Government Award for conference proposal
+      date: Mar 2025
+  leadership:
+    - position: Graduate Student Senator
+      organization: Department of Mechanical Engineering, University of Maine
+      location: Orono, ME
+      date: Sep 2025 - Present
+      highlights:
+        - Advocate for graduate student concerns in senate meetings, strengthening communication between 
+          students, faculty, and university leadership.
+    - position: President
+      organization: Persian Graduate Student Association, University of Maine
+      location: Orono, ME
+      date: Sep 2024 - Apr 2026
+      highlights:
+        - Organized Persian cultural events, including Nowruz celebrations with **100+ attendees**, to 
+          introduce Persian traditions.
+        - Coordinated event planning, team collaboration, logistics, and time-sensitive preparation for 
+          cultural and community programs.
+  publications:
+    summary: '**6 peer-reviewed (5 first-author) journal articles** in wearable sensing, biomechanics, rehabilitation
+      engineering, and robotics.'
+    items:
+      - authors: '**Ehsan Sharafian**, Babak Hejrati'
+        title: Real-Time Foot Height Estimation and Activity Classification Using a Foot-Mounted IMU 
+          Implemented on a Smartphone
+        venue: Sensors
+        year: '2026'
+      - authors: '**Ehsan Sharafian**, Colby Ellis, Babak Hejrati'
+        title: 'Real-Time Activity Recognition Using Minimal Biomechanical Features: A Lightweight IMU-Based Classifier
+          for Older Adults'
+        venue: IEEE Access
+        year: '2025'
+      - authors: '**Ehsan Sharafian**, Colby Ellis, Ben Sidaway, Marie Hayes, Babak Hejrati'
+        title: The Effects of Real-Time Haptic Feedback on Gait and Cognitive Load in Older Adults
+        venue: IEEE Transactions on Neural Systems and Rehabilitation Engineering
+        year: '2025'
+      - authors: Mohsen Noghani, **Ehsan Sharafian**, Ben Sidaway, Babak Hejrati
+        title: Increasing Thigh Extension with Haptic Feedback Affects Leg Coordination in Young and Older 
+          Adult Walkers
+        venue: Journal of Biomechanics
+        year: '2025'
+      - authors: '**Ehsan Sharafian**, Maryam Ghassabzadeh, Afshin Taghvaeipour'
+        title: Trajectory Optimization of a Spot-Welding Robot in the Joint and Cartesian Spaces
+        venue: International Journal of Robotics and Automation
+        year: '2023'
+      - authors: '**Ehsan Sharafian**, Afshin Taghvaeipour, Maryam Ghassabzadeh'
+        title: Revisiting Screw Theory-Based Approaches in the Constraint Wrench Analysis of Robotic Systems
+        venue: Robotica
+        year: '2022'
